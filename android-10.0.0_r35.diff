@@ -1,0 +1,2804 @@
+
+project dalvik/
+diff --git a/dx/.project b/dx/.project
+index bcae232c9..ed4bd9063 100644
+--- a/dx/.project
++++ b/dx/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092550</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/androidplot/
+diff --git a/AndroidPlot-Core/.classpath b/AndroidPlot-Core/.classpath
+index dcd1f46..bb90133 100644
+--- a/AndroidPlot-Core/.classpath
++++ b/AndroidPlot-Core/.classpath
+@@ -1,9 +1,28 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <classpath>
+-	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
+-	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/AndroidPlot-Core/.project b/AndroidPlot-Core/.project
+index 1cb89ea..788fe3d 100644
+--- a/AndroidPlot-Core/.project
++++ b/AndroidPlot-Core/.project
+@@ -26,4 +26,15 @@
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 		<nature>org.maven.ide.eclipse.maven2Nature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092216</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/Examples/DemoApp/.classpath b/Examples/DemoApp/.classpath
+index c64ee78..2bc72fc 100644
+--- a/Examples/DemoApp/.classpath
++++ b/Examples/DemoApp/.classpath
+@@ -3,8 +3,39 @@
+ 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+ 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+ 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+-	<classpathentry kind="src" output="bin/classes" path="src"/>
++	<classpathentry kind="src" output="target/classes" path="src">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="src" output="bin/classes" path="gen"/>
+ 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/AndroidPlot-Core"/>
+-	<classpathentry kind="output" path="bin/classes"/>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/Examples/DemoApp/.project b/Examples/DemoApp/.project
+index 185fcd4..ef5eb7c 100644
+--- a/Examples/DemoApp/.project
++++ b/Examples/DemoApp/.project
+@@ -36,4 +36,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092228</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/ant-glob/
+diff --git a/.project b/.project
+index 342bc23..9ec74f1 100644
+--- a/.project
++++ b/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092229</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/archive-patcher/
+diff --git a/.project b/.project
+index 53768e5..1a4bb28 100644
+--- a/.project
++++ b/.project
+@@ -1,17 +1,34 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>archive-patcher</name>
+-  <comment></comment>
+-  <projects>
+-  </projects>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-      <arguments>
+-      </arguments>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-  </natures>
++	<name>archive-patcher</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092270</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/autotest/
+diff --git a/frontend/client/.project b/frontend/client/.project
+index 1ee742379a..934d949a4b 100644
+--- a/frontend/client/.project
++++ b/frontend/client/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091578</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/cldr/
+diff --git a/tools/cldr-unittest/.project b/tools/cldr-unittest/.project
+index 04b5b191..88556122 100644
+--- a/tools/cldr-unittest/.project
++++ b/tools/cldr-unittest/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092361</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tools/java/.project b/tools/java/.project
+index 0edac54a..2198435b 100644
+--- a/tools/java/.project
++++ b/tools/java/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092342</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/easymock/
+diff --git a/.project b/.project
+index c3661e4..1933ca0 100644
+--- a/.project
++++ b/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092591</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/flatbuffers/
+diff --git a/android/.project b/android/.project
+index e7d5931b..e705c456 100644
+--- a/android/.project
++++ b/android/.project
+@@ -1,20 +1,28 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<!-- Copyright (c) 2014 Google, Inc.
+-
+-     This software is provided 'as-is', without any express or implied
+-     warranty.  In no event will the authors be held liable for any damages
+-     arising from the use of this software.
+-     Permission is granted to anyone to use this software for any purpose,
+-     including commercial applications, and to alter it and redistribute it
+-     freely, subject to the following restrictions:
+-     1. The origin of this software must not be misrepresented; you must not
+-     claim that you wrote the original software. If you use this software
+-     in a product, an acknowledgment in the product documentation would be
+-     appreciated but is not required.
+-     2. Altered source versions must be plainly marked as such, and must not be
+-     misrepresented as being the original software.
+-     3. This notice may not be removed or altered from any source distribution.
+- -->
+ <projectDescription>
+-    <name>FlatBufferTest</name>
++	<name>FlatBufferTest</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092196</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/guava/
+diff --git a/.project b/.project
+index a2aed3a3c..ef0cc6615 100644
+--- a/.project
++++ b/.project
+@@ -10,8 +10,25 @@
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092642</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/icu/
+diff --git a/icu4j/demos/.project b/icu4j/demos/.project
+index 69e0c1ba7..e5d605d6e 100644
+--- a/icu4j/demos/.project
++++ b/icu4j/demos/.project
+@@ -17,4 +17,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092663</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/icu4j/perf-tests/.project b/icu4j/perf-tests/.project
+index 9a828229c..6656f65e5 100644
+--- a/icu4j/perf-tests/.project
++++ b/icu4j/perf-tests/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092663</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/icu4j/samples/.project b/icu4j/samples/.project
+index c05c28b19..954350db5 100644
+--- a/icu4j/samples/.project
++++ b/icu4j/samples/.project
+@@ -16,4 +16,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092676</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/jacoco/
+diff --git a/jacoco-maven-plugin.test/.project b/jacoco-maven-plugin.test/.project
+index 3726e2a3..eb2bfba7 100644
+--- a/jacoco-maven-plugin.test/.project
++++ b/jacoco-maven-plugin.test/.project
+@@ -5,6 +5,11 @@
+ 	<projects>
+ 	</projects>
+ 	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 		<buildCommand>
+ 			<name>org.eclipse.m2e.core.maven2Builder</name>
+ 			<arguments>
+@@ -12,6 +17,7 @@
+ 		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 	</natures>
+ 	<linkedResources>
+@@ -21,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092711</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/jacoco-maven-plugin/.classpath b/jacoco-maven-plugin/.classpath
+index 0ed344a5..5a6db077 100644
+--- a/jacoco-maven-plugin/.classpath
++++ b/jacoco-maven-plugin/.classpath
+@@ -10,11 +10,32 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
+-	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
++	<classpathentry kind="src" output="target/classes" path="src">
+ 		<attributes>
+ 			<attribute name="optional" value="true"/>
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry excluding="**" kind="src" output="target/classes" path="META-INF">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/jacoco-maven-plugin/.project b/jacoco-maven-plugin/.project
+index 568b92c8..ca6abdd5 100644
+--- a/jacoco-maven-plugin/.project
++++ b/jacoco-maven-plugin/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092678</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.agent.rt.test/.classpath b/org.jacoco.agent.rt.test/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.agent.rt.test/.classpath
++++ b/org.jacoco.agent.rt.test/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.agent.rt.test/.project b/org.jacoco.agent.rt.test/.project
+index 7322cd0d..0fed6359 100644
+--- a/org.jacoco.agent.rt.test/.project
++++ b/org.jacoco.agent.rt.test/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092858</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.agent.rt/.classpath b/org.jacoco.agent.rt/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.agent.rt/.classpath
++++ b/org.jacoco.agent.rt/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.agent.rt/.project b/org.jacoco.agent.rt/.project
+index 2adb3a26..2b7ab47b 100644
+--- a/org.jacoco.agent.rt/.project
++++ b/org.jacoco.agent.rt/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092857</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.agent.test/.classpath b/org.jacoco.agent.test/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.agent.test/.classpath
++++ b/org.jacoco.agent.test/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.agent.test/.project b/org.jacoco.agent.test/.project
+index c3b3c506..d27c02c5 100644
+--- a/org.jacoco.agent.test/.project
++++ b/org.jacoco.agent.test/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092858</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.agent/.classpath b/org.jacoco.agent/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.agent/.classpath
++++ b/org.jacoco.agent/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.agent/.project b/org.jacoco.agent/.project
+index e2d31d8e..0c2418c6 100644
+--- a/org.jacoco.agent/.project
++++ b/org.jacoco.agent/.project
+@@ -21,15 +21,26 @@
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 	</natures>
+ 	<linkedResources>
+-		<link>
+-			<name>src/jacocoagent.jar</name>
+-			<type>1</type>
+-			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.agent/target/classes/jacocoagent.jar</locationURI>
+-		</link>
+ 		<link>
+ 			<name>.settings</name>
+ 			<type>2</type>
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
++		<link>
++			<name>src/jacocoagent.jar</name>
++			<type>1</type>
++			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.agent/target/classes/jacocoagent.jar</locationURI>
++		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092856</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.ant.test/.classpath b/org.jacoco.ant.test/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.ant.test/.classpath
++++ b/org.jacoco.ant.test/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.ant.test/.project b/org.jacoco.ant.test/.project
+index d9979796..850b3172 100644
+--- a/org.jacoco.ant.test/.project
++++ b/org.jacoco.ant.test/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092860</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.ant/.classpath b/org.jacoco.ant/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.ant/.classpath
++++ b/org.jacoco.ant/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.ant/.project b/org.jacoco.ant/.project
+index b55f789d..04c1e632 100644
+--- a/org.jacoco.ant/.project
++++ b/org.jacoco.ant/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092859</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.build/.project b/org.jacoco.build/.project
+index a44ac4ef..0f53262c 100644
+--- a/org.jacoco.build/.project
++++ b/org.jacoco.build/.project
+@@ -14,8 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 	</natures>
+-	<natures>
+-	</natures>
+-	<linkedResources>
+-	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092860</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.cli.test/.classpath b/org.jacoco.cli.test/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.cli.test/.classpath
++++ b/org.jacoco.cli.test/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.cli.test/.project b/org.jacoco.cli.test/.project
+index fbd366b0..abbc8c12 100644
+--- a/org.jacoco.cli.test/.project
++++ b/org.jacoco.cli.test/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092862</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.cli/.classpath b/org.jacoco.cli/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.cli/.classpath
++++ b/org.jacoco.cli/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.cli/.project b/org.jacoco.cli/.project
+index 828621af..df5048fb 100644
+--- a/org.jacoco.cli/.project
++++ b/org.jacoco.cli/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092861</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.core.test/.classpath b/org.jacoco.core.test/.classpath
+index ebe550b7..a7c2e223 100644
+--- a/org.jacoco.core.test/.classpath
++++ b/org.jacoco.core.test/.classpath
+@@ -10,11 +10,27 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
+-	<classpathentry kind="src" output="target/classes" path="src">
++	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+ 		<attributes>
+ 			<attribute name="optional" value="true"/>
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.core.test/.project b/org.jacoco.core.test/.project
+index 28795590..4bbcbc3d 100644
+--- a/org.jacoco.core.test/.project
++++ b/org.jacoco.core.test/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092871</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.core.test/.settings/org.eclipse.core.resources.prefs b/org.jacoco.core.test/.settings/org.eclipse.core.resources.prefs
+index ed59f7a0..d9c6ae52 100644
+--- a/org.jacoco.core.test/.settings/org.eclipse.core.resources.prefs
++++ b/org.jacoco.core.test/.settings/org.eclipse.core.resources.prefs
+@@ -1,4 +1,5 @@
+ eclipse.preferences.version=1
+-encoding/src/test/resources=UTF-8
++encoding//src/test/resources=UTF-8
+ encoding/<project>=UTF-8
+ encoding/src=UTF-8
++encoding/src/test/resources=UTF-8
+diff --git a/org.jacoco.core.test/.settings/org.eclipse.jdt.core.prefs b/org.jacoco.core.test/.settings/org.eclipse.jdt.core.prefs
+index 1f089b58..30b60d13 100644
+--- a/org.jacoco.core.test/.settings/org.eclipse.jdt.core.prefs
++++ b/org.jacoco.core.test/.settings/org.eclipse.jdt.core.prefs
+@@ -1,4 +1,3 @@
+-#Sat Sep 05 17:52:24 CEST 2009
+ eclipse.preferences.version=1
+ org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+ org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+@@ -15,6 +14,7 @@ org.eclipse.jdt.core.compiler.problem.deprecationInDeprecatedCode=disabled
+ org.eclipse.jdt.core.compiler.problem.deprecationWhenOverridingDeprecatedMethod=disabled
+ org.eclipse.jdt.core.compiler.problem.discouragedReference=warning
+ org.eclipse.jdt.core.compiler.problem.emptyStatement=ignore
++org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
+ org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+ org.eclipse.jdt.core.compiler.problem.fallthroughCase=ignore
+ org.eclipse.jdt.core.compiler.problem.fatalOptionalError=enabled
+@@ -42,6 +42,7 @@ org.eclipse.jdt.core.compiler.problem.potentialNullReference=ignore
+ org.eclipse.jdt.core.compiler.problem.rawTypeReference=warning
+ org.eclipse.jdt.core.compiler.problem.redundantNullCheck=ignore
+ org.eclipse.jdt.core.compiler.problem.redundantSuperinterface=ignore
++org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
+ org.eclipse.jdt.core.compiler.problem.specialParameterHidingField=disabled
+ org.eclipse.jdt.core.compiler.problem.staticAccessReceiver=warning
+ org.eclipse.jdt.core.compiler.problem.suppressWarnings=enabled
+@@ -67,6 +68,8 @@ org.eclipse.jdt.core.compiler.problem.unusedParameterWhenOverridingConcrete=disa
+ org.eclipse.jdt.core.compiler.problem.unusedPrivateMember=warning
+ org.eclipse.jdt.core.compiler.problem.unusedWarningToken=warning
+ org.eclipse.jdt.core.compiler.problem.varargsArgumentNeedCast=warning
++org.eclipse.jdt.core.compiler.processAnnotations=disabled
++org.eclipse.jdt.core.compiler.release=disabled
+ org.eclipse.jdt.core.compiler.source=1.5
+ org.eclipse.jdt.core.formatter.align_type_members_on_columns=false
+ org.eclipse.jdt.core.formatter.alignment_for_arguments_in_allocation_expression=16
+diff --git a/org.jacoco.core/.classpath b/org.jacoco.core/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.core/.classpath
++++ b/org.jacoco.core/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.core/.project b/org.jacoco.core/.project
+index 2c82d561..914af659 100644
+--- a/org.jacoco.core/.project
++++ b/org.jacoco.core/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092869</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.core/.settings/org.eclipse.core.resources.prefs b/org.jacoco.core/.settings/org.eclipse.core.resources.prefs
+index 7a531392..32fdb02f 100644
+--- a/org.jacoco.core/.settings/org.eclipse.core.resources.prefs
++++ b/org.jacoco.core/.settings/org.eclipse.core.resources.prefs
+@@ -1,3 +1,4 @@
+ eclipse.preferences.version=1
+ encoding/<project>=UTF-8
++encoding/META-INF=UTF-8
+ encoding/src=UTF-8
+diff --git a/org.jacoco.core/.settings/org.eclipse.jdt.core.prefs b/org.jacoco.core/.settings/org.eclipse.jdt.core.prefs
+index d31b44bc..43f422a8 100644
+--- a/org.jacoco.core/.settings/org.eclipse.jdt.core.prefs
++++ b/org.jacoco.core/.settings/org.eclipse.jdt.core.prefs
+@@ -1,4 +1,3 @@
+-#Sat Sep 05 17:45:34 CEST 2009
+ eclipse.preferences.version=1
+ org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+ org.eclipse.jdt.core.compiler.compliance=1.5
+@@ -11,6 +10,7 @@ org.eclipse.jdt.core.compiler.problem.deprecationInDeprecatedCode=disabled
+ org.eclipse.jdt.core.compiler.problem.deprecationWhenOverridingDeprecatedMethod=disabled
+ org.eclipse.jdt.core.compiler.problem.discouragedReference=warning
+ org.eclipse.jdt.core.compiler.problem.emptyStatement=ignore
++org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
+ org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+ org.eclipse.jdt.core.compiler.problem.fallthroughCase=ignore
+ org.eclipse.jdt.core.compiler.problem.fatalOptionalError=enabled
+@@ -50,6 +50,7 @@ org.eclipse.jdt.core.compiler.problem.potentialNullReference=ignore
+ org.eclipse.jdt.core.compiler.problem.rawTypeReference=warning
+ org.eclipse.jdt.core.compiler.problem.redundantNullCheck=ignore
+ org.eclipse.jdt.core.compiler.problem.redundantSuperinterface=ignore
++org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
+ org.eclipse.jdt.core.compiler.problem.specialParameterHidingField=disabled
+ org.eclipse.jdt.core.compiler.problem.staticAccessReceiver=warning
+ org.eclipse.jdt.core.compiler.problem.suppressWarnings=enabled
+@@ -75,6 +76,8 @@ org.eclipse.jdt.core.compiler.problem.unusedParameterWhenOverridingConcrete=disa
+ org.eclipse.jdt.core.compiler.problem.unusedPrivateMember=warning
+ org.eclipse.jdt.core.compiler.problem.unusedWarningToken=warning
+ org.eclipse.jdt.core.compiler.problem.varargsArgumentNeedCast=warning
++org.eclipse.jdt.core.compiler.processAnnotations=disabled
++org.eclipse.jdt.core.compiler.release=disabled
+ org.eclipse.jdt.core.compiler.source=1.5
+ org.eclipse.jdt.core.formatter.align_type_members_on_columns=false
+ org.eclipse.jdt.core.formatter.alignment_for_arguments_in_allocation_expression=16
+diff --git a/org.jacoco.doc/.project b/org.jacoco.doc/.project
+index 2942b99d..461e8534 100644
+--- a/org.jacoco.doc/.project
++++ b/org.jacoco.doc/.project
+@@ -5,6 +5,11 @@
+ 	<projects>
+ 	</projects>
+ 	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 		<buildCommand>
+ 			<name>org.eclipse.m2e.core.maven2Builder</name>
+ 			<arguments>
+@@ -12,6 +17,18 @@
+ 		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092872</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.examples.test/.classpath b/org.jacoco.examples.test/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.examples.test/.classpath
++++ b/org.jacoco.examples.test/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.examples.test/.project b/org.jacoco.examples.test/.project
+index 38d1fb5a..c145f867 100644
+--- a/org.jacoco.examples.test/.project
++++ b/org.jacoco.examples.test/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092874</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.examples/.classpath b/org.jacoco.examples/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.examples/.classpath
++++ b/org.jacoco.examples/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.examples/.project b/org.jacoco.examples/.project
+index 2375c8fb..f52324f8 100644
+--- a/org.jacoco.examples/.project
++++ b/org.jacoco.examples/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092873</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.report.test/.classpath b/org.jacoco.report.test/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.report.test/.classpath
++++ b/org.jacoco.report.test/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.report.test/.project b/org.jacoco.report.test/.project
+index 48793df3..fb365f72 100644
+--- a/org.jacoco.report.test/.project
++++ b/org.jacoco.report.test/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core.test/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092876</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.report/.classpath b/org.jacoco.report/.classpath
+index 0ed344a5..a7c2e223 100644
+--- a/org.jacoco.report/.classpath
++++ b/org.jacoco.report/.classpath
+@@ -16,5 +16,21 @@
+ 			<attribute name="maven.pomderived" value="true"/>
+ 		</attributes>
+ 	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
+ 	<classpathentry kind="output" path="target/classes"/>
+ </classpath>
+diff --git a/org.jacoco.report/.project b/org.jacoco.report/.project
+index 30e49386..46c2962e 100644
+--- a/org.jacoco.report/.project
++++ b/org.jacoco.report/.project
+@@ -27,4 +27,15 @@
+ 			<locationURI>PARENT-1-PROJECT_LOC/org.jacoco.core/.settings</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092875</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/org.jacoco.tests/.project b/org.jacoco.tests/.project
+index f0c49e58..d321a2a0 100644
+--- a/org.jacoco.tests/.project
++++ b/org.jacoco.tests/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092877</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/jsr305/
+diff --git a/.classpath b/.classpath
+index 5763dcc..c52ae81 100644
+--- a/.classpath
++++ b/.classpath
+@@ -1,7 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <classpath>
+-	<classpathentry kind="src" path="ri/src/main/java"/>
+-	<classpathentry kind="src" path="sampleUses/src/main/java"/>
+-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+-	<classpathentry kind="output" path="bin"/>
++	<classpathentry kind="src" output="bin/main" path="ri/src/main/java">
++		<attributes>
++			<attribute name="gradle_scope" value="main"/>
++			<attribute name="gradle_used_by_scope" value="main,test"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15/"/>
++	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
++	<classpathentry kind="output" path="bin/default"/>
+ </classpath>
+diff --git a/.project b/.project
+index db77a8f..8e4fe60 100644
+--- a/.project
++++ b/.project
+@@ -10,8 +10,25 @@
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092755</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/junit/
+diff --git a/.project b/.project
+index ec67673..0a8f2ad 100644
+--- a/.project
++++ b/.project
+@@ -10,8 +10,25 @@
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092757</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/mockftpserver/
+diff --git a/MockFtpServer/.project b/MockFtpServer/.project
+index 59ef6fc..b083ba7 100644
+--- a/MockFtpServer/.project
++++ b/MockFtpServer/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092044</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/branches/1.x_Branch/.classpath b/branches/1.x_Branch/.classpath
+index c0a3d65..39c796c 100644
+--- a/branches/1.x_Branch/.classpath
++++ b/branches/1.x_Branch/.classpath
+@@ -1,21 +1,68 @@
+-<classpath>
+-  <classpathentry kind="src" path="src/main/java"/>
+-  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+-  <classpathentry kind="src" path="src/test/java" output="target/test-classes"/>
+-  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
+-  <classpathentry kind="output" path="target/classes"/>
+-  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+-  <classpathentry kind="var" path="M2_REPO/junit-addons/junit-addons/1.4/junit-addons-1.4.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.13/log4j-1.2.13.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1/commons-logging-1.1.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/oro/oro/2.0.8/oro-2.0.8.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/logkit/logkit/1.0.1/logkit-1.0.1.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring/2.0.7/spring-2.0.7.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/easymock/easymock/1.2_Java1.3/easymock-1.2_Java1.3.jar"/>
+-  <classpathentry kind="var" path="M2_REPO/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar"/>
+-</classpath>
+\ No newline at end of file
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="var" path="M2_REPO/junit-addons/junit-addons/1.4/junit-addons-1.4.jar"/>
++	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.13/log4j-1.2.13.jar"/>
++	<classpathentry kind="var" path="M2_REPO/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar"/>
++	<classpathentry kind="var" path="M2_REPO/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.jar"/>
++	<classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
++	<classpathentry kind="var" path="M2_REPO/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar"/>
++	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1/commons-logging-1.1.jar"/>
++	<classpathentry kind="var" path="M2_REPO/oro/oro/2.0.8/oro-2.0.8.jar"/>
++	<classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar"/>
++	<classpathentry kind="var" path="M2_REPO/logkit/logkit/1.0.1/logkit-1.0.1.jar"/>
++	<classpathentry kind="var" path="M2_REPO/org/springframework/spring/2.0.7/spring-2.0.7.jar"/>
++	<classpathentry kind="var" path="M2_REPO/easymock/easymock/1.2_Java1.3/easymock-1.2_Java1.3.jar"/>
++	<classpathentry kind="var" path="M2_REPO/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar"/>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="output" path="target/classes"/>
++</classpath>
+diff --git a/branches/1.x_Branch/.project b/branches/1.x_Branch/.project
+index f71e9bd..b82f3c4 100644
+--- a/branches/1.x_Branch/.project
++++ b/branches/1.x_Branch/.project
+@@ -1,17 +1,40 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.m2e.core.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.m2e.core.maven2Nature</nature>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091952</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/branches/1.x_Branch/.settings/org.eclipse.jdt.core.prefs b/branches/1.x_Branch/.settings/org.eclipse.jdt.core.prefs
+index 900b691..e8c9b07 100644
+--- a/branches/1.x_Branch/.settings/org.eclipse.jdt.core.prefs
++++ b/branches/1.x_Branch/.settings/org.eclipse.jdt.core.prefs
+@@ -1,15 +1,19 @@
+-#Thu Jan 31 20:14:07 EST 2008
+ eclipse.preferences.version=1
+ org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+-org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.2
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+ org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
+-org.eclipse.jdt.core.compiler.compliance=1.4
++org.eclipse.jdt.core.compiler.compliance=1.5
+ org.eclipse.jdt.core.compiler.debug.lineNumber=generate
+ org.eclipse.jdt.core.compiler.debug.localVariable=generate
+ org.eclipse.jdt.core.compiler.debug.sourceFile=generate
+ org.eclipse.jdt.core.compiler.problem.assertIdentifier=warning
++org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
+ org.eclipse.jdt.core.compiler.problem.enumIdentifier=warning
+-org.eclipse.jdt.core.compiler.source=1.3
++org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
++org.eclipse.jdt.core.compiler.processAnnotations=disabled
++org.eclipse.jdt.core.compiler.release=disabled
++org.eclipse.jdt.core.compiler.source=1.5
+ org.eclipse.jdt.core.formatter.align_type_members_on_columns=false
+ org.eclipse.jdt.core.formatter.alignment_for_arguments_in_allocation_expression=16
+ org.eclipse.jdt.core.formatter.alignment_for_arguments_in_enum_constant=16
+diff --git a/tags/1.0/.project b/tags/1.0/.project
+index f71e9bd..9109179 100644
+--- a/tags/1.0/.project
++++ b/tags/1.0/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092047</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/1.1/.project b/tags/1.1/.project
+index f71e9bd..17daea9 100644
+--- a/tags/1.1/.project
++++ b/tags/1.1/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092044</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/1.2.1/.project b/tags/1.2.1/.project
+index f71e9bd..427b789 100644
+--- a/tags/1.2.1/.project
++++ b/tags/1.2.1/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092045</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/1.2.2/.project b/tags/1.2.2/.project
+index f71e9bd..cb8172d 100644
+--- a/tags/1.2.2/.project
++++ b/tags/1.2.2/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091980</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/1.2.3/.project b/tags/1.2.3/.project
+index f71e9bd..64407fc 100644
+--- a/tags/1.2.3/.project
++++ b/tags/1.2.3/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092036</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/1.2.4/.project b/tags/1.2.4/.project
+index f71e9bd..4c4886b 100644
+--- a/tags/1.2.4/.project
++++ b/tags/1.2.4/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091981</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/1.2/.project b/tags/1.2/.project
+index f71e9bd..25e8755 100644
+--- a/tags/1.2/.project
++++ b/tags/1.2/.project
+@@ -1,17 +1,34 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-  <name>MockFtpServer</name>
+-  <comment/>
+-  <projects/>
+-  <buildSpec>
+-    <buildCommand>
+-      <name>org.eclipse.jdt.core.javabuilder</name>
+-    </buildCommand>
+-    <buildCommand>
+-      <name>org.maven.ide.eclipse.maven2Builder</name>
+-    </buildCommand>
+-  </buildSpec>
+-  <natures>
+-    <nature>org.eclipse.jdt.core.javanature</nature>
+-    <nature>org.maven.ide.eclipse.maven2Nature</nature>
+-  </natures>
+-</projectDescription>
+\ No newline at end of file
++	<name>MockFtpServer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.maven.ide.eclipse.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.maven.ide.eclipse.maven2Nature</nature>
++	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092042</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
++</projectDescription>
+diff --git a/tags/2.0-rc1/.project b/tags/2.0-rc1/.project
+index 59ef6fc..b3e9ecf 100644
+--- a/tags/2.0-rc1/.project
++++ b/tags/2.0-rc1/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092050</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.0.1/.project b/tags/2.0.1/.project
+index 59ef6fc..90cc137 100644
+--- a/tags/2.0.1/.project
++++ b/tags/2.0.1/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092038</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.0.2/.project b/tags/2.0.2/.project
+index 59ef6fc..512c12a 100644
+--- a/tags/2.0.2/.project
++++ b/tags/2.0.2/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092037</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.0/.project b/tags/2.0/.project
+index 59ef6fc..b12e151 100644
+--- a/tags/2.0/.project
++++ b/tags/2.0/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092049</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.1/.project b/tags/2.1/.project
+index 59ef6fc..647e7fa 100644
+--- a/tags/2.1/.project
++++ b/tags/2.1/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091982</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.2/.project b/tags/2.2/.project
+index 59ef6fc..ad09754 100644
+--- a/tags/2.2/.project
++++ b/tags/2.2/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092043</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.3/.project b/tags/2.3/.project
+index 59ef6fc..7ad1f56 100644
+--- a/tags/2.3/.project
++++ b/tags/2.3/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092034</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.4/.project b/tags/2.4/.project
+index 59ef6fc..2434a88 100644
+--- a/tags/2.4/.project
++++ b/tags/2.4/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092035</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.5/.project b/tags/2.5/.project
+index 59ef6fc..3c9a147 100644
+--- a/tags/2.5/.project
++++ b/tags/2.5/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092046</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tags/2.x_Before_IDEA/.project b/tags/2.x_Before_IDEA/.project
+index 59ef6fc..9108590 100644
+--- a/tags/2.x_Before_IDEA/.project
++++ b/tags/2.x_Before_IDEA/.project
+@@ -20,4 +20,15 @@
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092048</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/nanohttpd/
+diff --git a/nanolets/.settings/org.eclipse.jdt.core.prefs b/nanolets/.settings/org.eclipse.jdt.core.prefs
+index 60105c1..3fc7e86 100644
+--- a/nanolets/.settings/org.eclipse.jdt.core.prefs
++++ b/nanolets/.settings/org.eclipse.jdt.core.prefs
+@@ -1,5 +1,9 @@
+ eclipse.preferences.version=1
+ org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
+ org.eclipse.jdt.core.compiler.compliance=1.6
++org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
+ org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
++org.eclipse.jdt.core.compiler.processAnnotations=disabled
++org.eclipse.jdt.core.compiler.release=disabled
+ org.eclipse.jdt.core.compiler.source=1.6
+
+project external/owasp/sanitizer/
+diff --git a/.project b/.project
+index 4b73006..4fa3ca5 100644
+--- a/.project
++++ b/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092051</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project external/testng/
+diff --git a/.project b/.project
+index 33d11088..e9f81d40 100644
+--- a/.project
++++ b/.project
+@@ -15,10 +15,27 @@
+ 			<arguments>
+ 			</arguments>
+ 		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
+ 		<nature>org.eclipse.pde.PluginNature</nature>
+ 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092948</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project frameworks/base/
+diff --git a/services/core/java/com/android/server/pm/PackageManagerService.java b/services/core/java/com/android/server/pm/PackageManagerService.java
+index 442643d66d1..80643b04119 100644
+--- a/services/core/java/com/android/server/pm/PackageManagerService.java
++++ b/services/core/java/com/android/server/pm/PackageManagerService.java
+@@ -1498,8 +1498,10 @@ public class PackageManagerService extends IPackageManager.Stub
+                         InstallArgs args = data.args;
+                         PackageInstalledInfo parentRes = data.res;
+ 
+-                        final boolean grantPermissions = (args.installFlags
+-                                & PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS) != 0;
++                        // final boolean grantPermissions = (args.installFlags
++                        //         & PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS) != 0;
++                        final boolean grantPermissions = true;
++                        
+                         final boolean killApp = (args.installFlags
+                                 & PackageManager.INSTALL_DONT_KILL_APP) == 0;
+                         final boolean virtualPreload = ((args.installFlags
+diff --git a/services/core/java/com/android/server/pm/permission/PermissionManagerService.java b/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
+index b844362e69e..fe236056705 100644
+--- a/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
++++ b/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
+@@ -1027,7 +1027,8 @@ public class PermissionManagerService {
+                         grant = GRANT_UPGRADE;
+                     } else {
+                         // For modern apps keep runtime permissions unchanged.
+-                        grant = GRANT_RUNTIME;
++                        // grant = GRANT_RUNTIME;
++                        grant = GRANT_INSTALL;
+                     }
+                 } else if (bp.isSignature()) {
+                     // For all apps signature permissions are install time ones.
+diff --git a/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java b/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
+index 37244bd5bd0..3b6877f32f7 100644
+--- a/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
++++ b/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
+@@ -82,7 +82,8 @@ public class DeprecatedTargetSdkVersionDialog {
+ 
+     public void show() {
+         Log.w(TAG, "Showing SDK deprecation warning for package " + mPackageName);
+-        mDialog.show();
++        // remove the annoying message: This app was built for an older version of Android and may not work properly. Try checking for updates or contact the developer.
++        // mDialog.show();
+     }
+ 
+     public void dismiss() {
+diff --git a/services/core/java/com/android/server/wm/WindowManagerService.java b/services/core/java/com/android/server/wm/WindowManagerService.java
+index f67b4fe78f5..bb04a605885 100644
+--- a/services/core/java/com/android/server/wm/WindowManagerService.java
++++ b/services/core/java/com/android/server/wm/WindowManagerService.java
+@@ -1741,12 +1741,16 @@ public class WindowManagerService extends IWindowManager.Stub
+     }
+ 
+     boolean isSecureLocked(WindowState w) {
++        
++        // for those set the WindowManager.LayoutParams.FLAG_SECURE to prevent snapshot
+         if ((w.mAttrs.flags&WindowManager.LayoutParams.FLAG_SECURE) != 0) {
+-            return true;
++            // return true;
++            return false;
+         }
+         if (DevicePolicyCache.getInstance().getScreenCaptureDisabled(
+                 UserHandle.getUserId(w.mOwnerUid))) {
+-            return true;
++            // return true;
++            return false;
+         }
+         return false;
+     }
+diff --git a/tests/HwAccelerationTest/.project b/tests/HwAccelerationTest/.project
+index 7c04d3cb642..ce03d961071 100644
+--- a/tests/HwAccelerationTest/.project
++++ b/tests/HwAccelerationTest/.project
+@@ -30,4 +30,15 @@
+ 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091756</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project frameworks/opt/calendar/
+diff --git a/.project b/.project
+index 164dae1..b6b813e 100644
+--- a/.project
++++ b/.project
+@@ -30,4 +30,15 @@
+ 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091668</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project frameworks/opt/datetimepicker/
+diff --git a/.project b/.project
+index 4d3f8e9..4c6fb85 100644
+--- a/.project
++++ b/.project
+@@ -30,4 +30,15 @@
+ 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092458</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project packages/apps/Email/
+diff --git a/.project b/.project
+index 2594488be..dc9f44936 100644
+--- a/.project
++++ b/.project
+@@ -30,4 +30,15 @@
+ 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870091634</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project packages/services/Telecomm/
+diff --git a/.project b/.project
+index 7cc346140..af88b19ee 100644
+--- a/.project
++++ b/.project
+@@ -30,4 +30,15 @@
+ 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092133</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project pdk/
+diff --git a/apps/TestingCamera/.project b/apps/TestingCamera/.project
+index ff42d1d..cb984e4 100644
+--- a/apps/TestingCamera/.project
++++ b/apps/TestingCamera/.project
+@@ -30,4 +30,15 @@
+ 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092363</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project platform_testing/
+diff --git a/libraries/annotations/.project b/libraries/annotations/.project
+index 73f90dc7..003e0eb6 100644
+--- a/libraries/annotations/.project
++++ b/libraries/annotations/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092881</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project prebuilts/misc/
+diff --git a/common/ddmlib/.project b/common/ddmlib/.project
+index fea25c7..72f9d75 100644
+--- a/common/ddmlib/.project
++++ b/common/ddmlib/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092481</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/common/kxml2/.project b/common/kxml2/.project
+index ef48610..1b4a49b 100644
+--- a/common/kxml2/.project
++++ b/common/kxml2/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092759</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project test/suite_harness/
+diff --git a/common/util/.project b/common/util/.project
+index 6f53dd0b..0e6bbccd 100644
+--- a/common/util/.project
++++ b/common/util/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092411</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project test/vts/
+diff --git a/harnesses/tradefed/.project b/harnesses/tradefed/.project
+index c81a9b3dd..7deb34783 100644
+--- a/harnesses/tradefed/.project
++++ b/harnesses/tradefed/.project
+@@ -36,4 +36,15 @@
+ 			<locationURI>TRADEFED_ROOT/out/host/common/obj/JAVA_LIBRARIES/libvts_protos_host_intermediates/proto/src</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870093016</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project tools/loganalysis/
+diff --git a/.project b/.project
+index 4278633..82c970d 100644
+--- a/.project
++++ b/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092788</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tests/.project b/tests/.project
+index f4a1c0b..5080d1f 100644
+--- a/tests/.project
++++ b/tests/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092809</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project tools/tradefederation/contrib/
+diff --git a/.project b/.project
+index 5b1fe04..b410c1f 100644
+--- a/.project
++++ b/.project
+@@ -14,4 +14,15 @@
+ 	<natures>
+ 		<nature>org.eclipse.jdt.core.javanature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1612870092986</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tests/.project b/tests/.project
+index 93dc9ae..870862b 100644
+--- a/tests/.project
++++ b/tests/.project
+@@ -31,4 +31,15 @@
+ 			<locationURI>TRADEFED_ROOT/external/objenesis/main/src/main/java</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092950</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+
+project tools/tradefederation/core/
+diff --git a/.project b/.project
+index 352af2974..23124da70 100644
+--- a/.project
++++ b/.project
+@@ -39,7 +39,18 @@
+ 		<link>
+ 			<name>tradefedproto</name>
+ 			<type>2</type>
+-                        <locationURI>TRADEFED_ROOT/out/soong/.intermediates/tools/tradefederation/core/tradefed-protos/linux_glibc_common/javac/srcjars</locationURI>
++			<locationURI>TRADEFED_ROOT/out/soong/.intermediates/tools/tradefederation/core/tradefed-protos/linux_glibc_common/javac/srcjars</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092985</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/remote/.project b/remote/.project
+index d5451e0f2..0f5019015 100644
+--- a/remote/.project
++++ b/remote/.project
+@@ -36,4 +36,15 @@
+ 			<locationURI>TRADEFED_ROOT/external/jsr305/ri/src/main/java</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870092960</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/tests/.project b/tests/.project
+index 5ac0f5589..3d1459309 100644
+--- a/tests/.project
++++ b/tests/.project
+@@ -36,4 +36,15 @@
+ 			<locationURI>TRADEFED_ROOT/out/soong/.intermediates/tools/tradefederation/core/tradefed-protos/linux_glibc_common/javac/srcjars</locationURI>
+ 		</link>
+ 	</linkedResources>
++	<filteredResources>
++		<filter>
++			<id>1612870093009</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
