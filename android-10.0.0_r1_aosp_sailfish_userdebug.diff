@@ -1,0 +1,431 @@
+
+project build/make/
+diff --git a/target/product/base_system.mk b/target/product/base_system.mk
+index 822d2ead8c..4c9d703806 100644
+--- a/target/product/base_system.mk
++++ b/target/product/base_system.mk
+@@ -363,7 +363,7 @@ PRODUCT_PACKAGES_DEBUG := \
+     sqlite3 \
+     ss \
+     strace \
+-    su \
++    sw \
+     sanitizer-status \
+     tracepath \
+     tracepath6 \
+
+project frameworks/base/
+diff --git a/core/java/android/widget/Toast.java b/core/java/android/widget/Toast.java
+index d037337d4546..0fb4c20274c1 100644
+--- a/core/java/android/widget/Toast.java
++++ b/core/java/android/widget/Toast.java
+@@ -465,6 +465,11 @@ public class Toast {
+         }
+ 
+         public void handleShow(IBinder windowToken) {
++            Log.i("fy_Toast", "HANDLE SHOW: " + this + " mView=" + mView
++                    + " mNextView=" + mNextView);
++            return;
++            
++            /*
+             if (localLOGV) Log.v(TAG, "HANDLE SHOW: " + this + " mView=" + mView
+                     + " mNextView=" + mNextView);
+             // If a cancel/hide is pending - no need to show - at this point
+@@ -514,9 +519,10 @@ public class Toast {
+                     mWM.addView(mView, mParams);
+                     trySendAccessibilityEvent();
+                 } catch (WindowManager.BadTokenException e) {
+-                    /* ignore */
++                    // ignore 
+                 }
+             }
++            */
+         }
+ 
+         private void trySendAccessibilityEvent() {
+diff --git a/core/res/AndroidManifest.xml b/core/res/AndroidManifest.xml
+index a3fccd96f224..5d820a5b68e1 100644
+--- a/core/res/AndroidManifest.xml
++++ b/core/res/AndroidManifest.xml
+@@ -667,7 +667,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_readContacts"
+         android:description="@string/permdesc_readContacts"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to write the user's contacts data.
+          <p>Protection level: dangerous
+@@ -676,7 +676,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_writeContacts"
+         android:description="@string/permdesc_writeContacts"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing user's calendar                              -->
+@@ -698,7 +698,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_readCalendar"
+         android:description="@string/permdesc_readCalendar"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to write the user's calendar data.
+          <p>Protection level: dangerous
+@@ -707,7 +707,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_writeCalendar"
+         android:description="@string/permdesc_writeCalendar"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing and modifying user's SMS messages            -->
+@@ -734,7 +734,7 @@
+         android:label="@string/permlab_sendSms"
+         android:description="@string/permdesc_sendSms"
+         android:permissionFlags="costsMoney|hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to receive SMS messages.
+          <p>Protection level: dangerous
+@@ -748,7 +748,7 @@
+         android:label="@string/permlab_receiveSms"
+         android:description="@string/permdesc_receiveSms"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to read SMS messages.
+          <p>Protection level: dangerous
+@@ -762,7 +762,7 @@
+         android:label="@string/permlab_readSms"
+         android:description="@string/permdesc_readSms"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to receive WAP push messages.
+          <p>Protection level: dangerous
+@@ -776,7 +776,7 @@
+         android:label="@string/permlab_receiveWapPush"
+         android:description="@string/permdesc_receiveWapPush"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to monitor incoming MMS messages.
+          <p>Protection level: dangerous
+@@ -790,7 +790,7 @@
+         android:label="@string/permlab_receiveMms"
+         android:description="@string/permdesc_receiveMms"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- @SystemApi @TestApi Allows an application to read previously received cell broadcast
+          messages and to register a content observer to get notifications when
+@@ -814,7 +814,7 @@
+         android:label="@string/permlab_readCellBroadcasts"
+         android:description="@string/permdesc_readCellBroadcasts"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing external storage                             -->
+@@ -865,7 +865,7 @@
+         android:label="@string/permlab_sdcardRead"
+         android:description="@string/permdesc_sdcardRead"
+         android:permissionFlags="softRestricted|immutablyRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to write to external storage.
+          <p class="note"><strong>Note:</strong> If <em>both</em> your <a
+@@ -888,7 +888,7 @@
+         android:label="@string/permlab_sdcardWrite"
+         android:description="@string/permdesc_sdcardWrite"
+         android:permissionFlags="softRestricted|immutablyRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to access any geographic locations persisted in the
+          user's shared collection. -->
+@@ -896,7 +896,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_mediaLocation"
+         android:description="@string/permdesc_mediaLocation"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- @hide @SystemApi @TestApi
+          Allows an application to modify OBB files visible to other apps. -->
+@@ -928,7 +928,7 @@
+         android:label="@string/permlab_accessFineLocation"
+         android:description="@string/permdesc_accessFineLocation"
+         android:backgroundPermission="android.permission.ACCESS_BACKGROUND_LOCATION"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+     <!-- Allows an app to access approximate location.
+          Alternatively, you might want {@link #ACCESS_FINE_LOCATION}.
+@@ -939,7 +939,7 @@
+         android:label="@string/permlab_accessCoarseLocation"
+         android:description="@string/permdesc_accessCoarseLocation"
+         android:backgroundPermission="android.permission.ACCESS_BACKGROUND_LOCATION"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+     <!-- Allows an app to access location in the background. If you're requesting this permission,
+          you must also request either {@link #ACCESS_COARSE_LOCATION} or
+@@ -956,7 +956,7 @@
+         android:label="@string/permlab_accessBackgroundLocation"
+         android:permissionFlags="hardRestricted"
+         android:description="@string/permdesc_accessBackgroundLocation"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing the call log                                 -->
+@@ -1002,7 +1002,7 @@
+         android:label="@string/permlab_readCallLog"
+         android:description="@string/permdesc_readCallLog"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to write (but not read) the user's
+          call log data.
+@@ -1026,7 +1026,7 @@
+         android:label="@string/permlab_writeCallLog"
+         android:description="@string/permdesc_writeCallLog"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to see the number being dialed during an outgoing
+          call with the option to redirect the call to a different number or
+@@ -1045,7 +1045,7 @@
+         android:label="@string/permlab_processOutgoingCalls"
+         android:description="@string/permdesc_processOutgoingCalls"
+         android:permissionFlags="hardRestricted"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing the device telephony                         -->
+@@ -1077,7 +1077,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_readPhoneState"
+         android:description="@string/permdesc_readPhoneState"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows read access to the device's phone number(s). This is a subset of the capabilities
+          granted by {@link #READ_PHONE_STATE} but is exposed to instant applications.
+@@ -1086,7 +1086,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_readPhoneNumbers"
+         android:description="@string/permdesc_readPhoneNumbers"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+     <!-- Allows an application to initiate a phone call without going through
+         the Dialer user interface for the user to confirm the call.
+@@ -1097,7 +1097,7 @@
+         android:permissionFlags="costsMoney"
+         android:label="@string/permlab_callPhone"
+         android:description="@string/permdesc_callPhone"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to add voicemails into the system.
+          <p>Protection level: dangerous
+@@ -1106,7 +1106,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_addVoicemail"
+         android:description="@string/permdesc_addVoicemail"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an application to use SIP service.
+          <p>Protection level: dangerous
+@@ -1115,7 +1115,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:description="@string/permdesc_use_sip"
+         android:label="@string/permlab_use_sip"
+-        android:protectionLevel="dangerous"/>
++        android:protectionLevel="normal"/>
+ 
+     <!-- Allows the app to answer an incoming phone call.
+          <p>Protection level: dangerous
+@@ -1124,7 +1124,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_answerPhoneCalls"
+         android:description="@string/permdesc_answerPhoneCalls"
+-        android:protectionLevel="dangerous|runtime" />
++        android:protectionLevel="normal|runtime" />
+ 
+     <!-- Allows a calling application which manages it own calls through the self-managed
+          {@link android.telecom.ConnectionService} APIs.  See
+@@ -1164,7 +1164,7 @@
+                 android:permissionGroup="android.permission-group.UNDEFINED"
+                 android.label="@string/permlab_acceptHandover"
+                 android:description="@string/permdesc_acceptHandovers"
+-                android:protectionLevel="dangerous" />
++                android:protectionLevel="normal" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing the device microphone                        -->
+@@ -1188,7 +1188,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_recordAudio"
+         android:description="@string/permdesc_recordAudio"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for activity recognition                        -->
+@@ -1210,7 +1210,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_activityRecognition"
+         android:description="@string/permdesc_activityRecognition"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+     <!-- ====================================================================== -->
+     <!-- Permissions for accessing the UCE Service                              -->
+@@ -1259,7 +1259,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_camera"
+         android:description="@string/permdesc_camera"
+-        android:protectionLevel="dangerous|instant" />
++        android:protectionLevel="normal|instant" />
+ 
+ 
+     <!-- ====================================================================== -->
+@@ -1283,7 +1283,7 @@
+         android:permissionGroup="android.permission-group.UNDEFINED"
+         android:label="@string/permlab_bodySensors"
+         android:description="@string/permdesc_bodySensors"
+-        android:protectionLevel="dangerous" />
++        android:protectionLevel="normal" />
+ 
+     <!-- Allows an app to use fingerprint hardware.
+          <p>Protection level: normal
+@@ -1805,7 +1805,7 @@
+     -->
+     <permission android:name="android.permission.GET_ACCOUNTS"
+         android:permissionGroup="android.permission-group.UNDEFINED"
+-        android:protectionLevel="dangerous"
++        android:protectionLevel="normal"
+         android:description="@string/permdesc_getAccounts"
+         android:label="@string/permlab_getAccounts" />
+     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+diff --git a/services/core/java/com/android/server/wm/AppWarnings.java b/services/core/java/com/android/server/wm/AppWarnings.java
+index 6c3fbc1f4160..1816264ffbb0 100644
+--- a/services/core/java/com/android/server/wm/AppWarnings.java
++++ b/services/core/java/com/android/server/wm/AppWarnings.java
+@@ -245,7 +245,8 @@ class AppWarnings {
+                 ar.packageName, FLAG_HIDE_DISPLAY_SIZE)) {
+             mUnsupportedDisplaySizeDialog = new UnsupportedDisplaySizeDialog(
+                     AppWarnings.this, mUiContext, ar.info.applicationInfo);
+-            mUnsupportedDisplaySizeDialog.show();
++            //mUnsupportedDisplaySizeDialog.show();
++            Slog.i("fy_log", "showUnsupportedDisplaySizeDialogUiThread()");
+         }
+     }
+ 
+@@ -266,7 +267,8 @@ class AppWarnings {
+                 ar.packageName, FLAG_HIDE_COMPILE_SDK)) {
+             mUnsupportedCompileSdkDialog = new UnsupportedCompileSdkDialog(
+                     AppWarnings.this, mUiContext, ar.info.applicationInfo);
+-            mUnsupportedCompileSdkDialog.show();
++            //mUnsupportedCompileSdkDialog.show();
++            Slog.i("fy_log", "showUnsupportedCompileSdkDialogUiThread()");
+         }
+     }
+ 
+@@ -287,7 +289,8 @@ class AppWarnings {
+                 ar.packageName, FLAG_HIDE_DEPRECATED_SDK)) {
+             mDeprecatedTargetSdkVersionDialog = new DeprecatedTargetSdkVersionDialog(
+                     AppWarnings.this, mUiContext, ar.info.applicationInfo);
+-            mDeprecatedTargetSdkVersionDialog.show();
++            //mDeprecatedTargetSdkVersionDialog.show();
++            Slog.i("fy_log", "showDeprecatedTargetSdkDialogUiThread()");
+         }
+     }
+ 
+
+project packages/apps/Settings/
+diff --git a/src/com/android/settings/fuelgauge/RequestIgnoreBatteryOptimizations.java b/src/com/android/settings/fuelgauge/RequestIgnoreBatteryOptimizations.java
+index 27bd889afc..5623f9191a 100644
+--- a/src/com/android/settings/fuelgauge/RequestIgnoreBatteryOptimizations.java
++++ b/src/com/android/settings/fuelgauge/RequestIgnoreBatteryOptimizations.java
+@@ -44,6 +44,9 @@ public class RequestIgnoreBatteryOptimizations extends AlertActivity implements
+     @Override
+     public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
++        finish();
++        return;
++        /*
+ 
+         mDeviceIdleService = IDeviceIdleController.Stub.asInterface(
+                 ServiceManager.getService(DEVICE_IDLE_SERVICE));
+@@ -96,6 +99,7 @@ public class RequestIgnoreBatteryOptimizations extends AlertActivity implements
+         p.mPositiveButtonListener = this;
+         p.mNegativeButtonListener = this;
+         setupAlert();
++        */
+     }
+ 
+     @Override
+
+project system/core/
+diff --git a/libcutils/fs_config.cpp b/libcutils/fs_config.cpp
+index a5f4f0e55..d383e2e7d 100644
+--- a/libcutils/fs_config.cpp
++++ b/libcutils/fs_config.cpp
+@@ -197,7 +197,7 @@ static const struct fs_path_config android_files[] = {
+     // the following two files are INTENTIONALLY set-uid, but they
+     // are NOT included on user builds.
+     { 06755, AID_ROOT,      AID_ROOT,      0, "system/xbin/procmem" },
+-    { 04750, AID_ROOT,      AID_SHELL,     0, "system/xbin/su" },
++    { 04750, AID_ROOT,      AID_SHELL,     0, "system/xbin/sw" },
+ 
+     // the following files have enhanced capabilities and ARE included
+     // in user builds.
+
+project system/extras/
+diff --git a/su/Android.mk b/su/Android.mk
+index e3da4f21..2aabb6a9 100644
+--- a/su/Android.mk
++++ b/su/Android.mk
+@@ -5,7 +5,7 @@ LOCAL_CFLAGS := -Wall -Werror
+ 
+ LOCAL_SRC_FILES:= su.cpp
+ 
+-LOCAL_MODULE:= su
++LOCAL_MODULE:= sw
+ 
+ LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
+ 
+
+project system/sepolicy/
+diff --git a/private/file_contexts b/private/file_contexts
+index 530bd45fa..6d78b253f 100644
+--- a/private/file_contexts
++++ b/private/file_contexts
+@@ -254,7 +254,7 @@
+ /system/bin/mtpd	u:object_r:mtp_exec:s0
+ /system/bin/pppd	u:object_r:ppp_exec:s0
+ /system/bin/racoon	u:object_r:racoon_exec:s0
+-/system/xbin/su		u:object_r:su_exec:s0
++/system/xbin/sw		u:object_r:su_exec:s0
+ /system/bin/perfprofd  u:object_r:perfprofd_exec:s0
+ /system/bin/dnsmasq     u:object_r:dnsmasq_exec:s0
+ /system/bin/healthd     u:object_r:healthd_exec:s0
