@@ -10,12 +10,12 @@ a variety of interaction that hinder automatic test.
 |1| auto grant permission | - | DONE |
 |2| remove the annoying message: This app was built for an older version of Android and may not work properly. Try checking for updates or contact the developer. | - | DONE |
 |3| bypass these use WindowManager.LayoutParams.FLAG_SECURE to prevent taking snapshot. | - | DONE |
-|4| bypass root detector |  | DONE |
-|5| remove system prompt |  | DONE |
-|6| remove footer and header | - | |
-|7| turn off screen saver | - | |
+|4| bypass root detector | 1 | DONE |
+|5| remove system prompt | 2 | DONE |
+|6| remove footer and header | - | DONE |
+|7| turn off screen saver | - | DONE |
 |8| INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113 | 3 | |
-|9| remove Toast window |  | DONE |
+|9| remove Toast window | - | DONE |
 
 ## Howto: 
 
