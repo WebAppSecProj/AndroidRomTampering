@@ -16,6 +16,7 @@ a variety of interaction that hinder automatic test.
 |7| turn off screen saver | - | DONE |
 |8| INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113 | 3 | |
 |9| remove Toast window | - | DONE |
+|10| allow screenshots | - | DONE |
 
 ## Howto: 
 

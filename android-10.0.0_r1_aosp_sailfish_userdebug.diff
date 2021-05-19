@@ -15,6 +15,21 @@ index 822d2ead8c..4c9d703806 100644
      tracepath6 \
 
 project frameworks/base/
+diff --git a/core/java/android/view/Window.java b/core/java/android/view/Window.java
+index 73e0e4b2eb8b..b9542f074e66 100644
+--- a/core/java/android/view/Window.java
++++ b/core/java/android/view/Window.java
+@@ -1078,6 +1078,10 @@ public abstract class Window {
+      * @see #clearFlags
+      */
+     public void addFlags(int flags) {
++    //public static final int FLAG_SECURE = 0x00002000;
++    	if (flags == 0x00002000){
++    		return;
++    	}
+         setFlags(flags, flags);
+     }
+ 
 diff --git a/core/java/android/widget/Toast.java b/core/java/android/widget/Toast.java
 index d037337d4546..0fb4c20274c1 100644
 --- a/core/java/android/widget/Toast.java
